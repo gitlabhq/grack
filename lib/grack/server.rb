@@ -63,7 +63,7 @@ module Grack
       @res.status = 200
       @res["Content-Type"] = "application/x-git-%s-result" % @rpc
       @res.finish do
-        command = git_command("#{@rpc} --stateless-rpc #{@dir}")
+        command = "cd #{@dir} && " + git_command("#{@rpc} --stateless-rpc #{@dir}")
         IO.popen(command, File::RDWR) do |pipe|
           pipe.write(input)
           pipe.close_write
