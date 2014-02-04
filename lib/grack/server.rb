@@ -72,7 +72,7 @@ module Grack
       @res["Cache-Control"] = "no-cache"
 
       @res.finish do
-        command = git_command("#{@rpc} --stateless-rpc #{@dir}")
+        command = "cd #{@dir} && " + git_command("#{@rpc} --stateless-rpc #{@dir}")
         IO.popen(command, File::RDWR) do |pipe|
           pipe.write(input)
           pipe.close_write
