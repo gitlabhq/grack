@@ -1,12 +1,14 @@
 language: ruby
+sudo: false
+cache: bundler
 env:
   - TRAVIS=true
 branches:
   only:
     - 'master'
 rvm:
-  - 1.9.3-p327
-  - 2.0.0
+  - 2.3.3
+  - 2.2.6
 before_script:
   - "bundle install"
   - "git submodule init"

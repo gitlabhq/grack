@@ -1,7 +1,7 @@
 require 'rack'
 require 'rack/test'
 require 'test/unit'
-require 'mocha'
+require 'mocha/setup'
 require 'digest/sha1'
 
 require_relative '../lib/grack/server.rb'

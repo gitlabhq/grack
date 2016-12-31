@@ -17,4 +17,5 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency("rack", ">= 1.5.1")
   gem.add_development_dependency("mocha", "~> 0.11")
+  gem.add_development_dependency("test-unit", "~> 3.2.0")
 end
